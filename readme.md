@@ -1,3 +1,17 @@
+- [Project](#project)
+- [Blazor Web App](#blazor-web-app)
+- [App.razor](#apprazor)
+  - [Components](#components)
+    - [Using a component](#using-a-component)
+    - [Passing parameters (props)](#passing-parameters-props)
+    - [Code blocks](#code-blocks)
+  - [Pages](#pages)
+  - [Routing](#routing)
+  - [Imports](#imports)
+- [Usage](#usage)
+- [Endpoints](#endpoints)
+- [Author](#author)
+
 # Project
 This is a simple setup of a Blazor Web App application with C# and .NET 9.
 
