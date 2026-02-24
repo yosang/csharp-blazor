@@ -3,9 +3,9 @@
 
 @using Models
 
-@if (products.Count == 0)
+@if (Product == null)
 {
-    <p>Loading...</p>
+    <p>Product @Id not found :(</p>
 } else {
     <div style="display: flex; justify-content: center; align-content: center;">
         <div>
@@ -17,9 +17,9 @@
 
 @code {
     [Parameter]
-    public int Id {get; set;}
+    public int Id {get; set;} // Set through the URL parameter
 
-    private List<Product> products = new List<Product>(); // Empty list
+    private List<Product> products = new List<Product>(); // Empty list, we are populating it OnInitialized()
     
     public Product? Product { get; set;}
 
