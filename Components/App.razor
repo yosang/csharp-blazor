@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blazor App</title>
+</head>
+<body>
+    @* Routes are brought in from the Assembly
+        Each route is automatically defined when we declare it with @page "/endpoint..."
+     *@
+    <Routes />
+    
+    @* A small JS file provided by the .NET/Blazor framwork that sets up the environment for our Blazor app
+        - Provides the SignalR Websocket connection with circuits for each connection
+        - Downloads the .NET runtime + the required .dlls for the WebAssembly application
+        - Enables interactivity (event handling, DOM updates from C# etc)
+     *@
+    <script src="_framework/blazor.web.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<h1>@Name</h1>
+<p>Id: @Id</p>
+<p>Price: @Price</p>
+<a href="/">Go back</a>
+
+@* Once used, we can set the values through the [Parameter] attrribute *@
+@code {
+    [Parameter]
+    public string Name {get; set;} = string.Empty;
+    [Parameter]
+    public int Id {get; set;}
+    [Parameter]
+    public double Price {get; set;}
+}

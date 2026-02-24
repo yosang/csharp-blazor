@@ -1,0 +1,37 @@
+@page "/details/{Id:int}"
+@rendermode InteractiveServer
+
+@using Models
+
+@if (products.Count == 0)
+{
+    <p>Loading...</p>
+} else {
+    <div style="display: flex; justify-content: center; align-content: center;">
+        <div>
+            <ProductCard Id="@Product.Id" Name="@Product.Name"  Price="@Product.Price" />
+        </div>
+    </div>
+}
+
+
+@code {
+    [Parameter]
+    public int Id {get; set;}
+
+    private List<Product> products = new List<Product>(); // Empty list
+    
+    public Product? Product { get; set;}
+
+    protected override void OnInitialized()
+    {
+        products = new List<Product>() // reassigning products with a populated list
+        {
+            new Product { Id = 1, Name = "Laptop", Price= 999.9},
+            new Product { Id = 2, Name = "Mouse", Price= 999.9},
+            new Product { Id = 3, Name = "Phone", Price= 999.9},
+        };
+
+        Product = products.Find((i) => i.Id == Id);
+    }
+}

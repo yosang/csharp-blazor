@@ -1,0 +1,37 @@
+@page "/"
+@rendermode InteractiveServer
+
+@using Models
+
+
+@if(products.Count == 0)
+{
+    <p>Loading...</p>
+} else {
+    @foreach (var p in products)
+    {
+        <div style="display: flex; justify-content: center; align-content: center;">
+            <ul>
+                 <a href="/details/@p.Id"><li style="list-style: none;">@p.Name</li></a>
+            </ul>
+            
+        </div>
+    }
+}
+
+@* This code is responsible for generating data and using 
+the OnInitialized method once this component is rendered *@
+
+@code {
+    private List<Product> products = new List<Product>(); // Empty list
+
+    protected override void OnInitialized()
+    {
+        products = new List<Product>() // reassigning products with a populated list
+        {
+            new Product { Id = 1, Name = "Laptop", Price= 999.9},
+            new Product { Id = 2, Name = "Mouse", Price= 999.9},
+            new Product { Id = 3, Name = "Phone", Price= 999.9},
+        };
+    }
+}
